@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://11fyvkcd2ya1"]
+
+[node name="pt2" type="Node2D" unique_id=1404157735]
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=1063495057]
+
+[node name="Fundo 2" type="Sprite2D" parent="." unique_id=285501604]
+
+[node name="Chao" type="Sprite2D" parent="." unique_id=1271612974]
+
+[node name="Chao 2" type="Sprite2D" parent="." unique_id=663990252]
+
+[node name="Chaofisico" type="StaticBody2D" parent="." unique_id=952545761]
+
+[node name="CorpoChao" type="CollisionShape2D" parent="Chaofisico" unique_id=1012366333]
