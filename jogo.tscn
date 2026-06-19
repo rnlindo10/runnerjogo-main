@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://cyikrrms4wm3d"]
-
-[node name="Jogo" type="Node2D" unique_id=1686461643]
-
-[node name="fundo" type="Sprite2D" parent="." unique_id=343318512]

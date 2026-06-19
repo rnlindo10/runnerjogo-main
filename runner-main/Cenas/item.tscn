@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://f70e6ekiwlqy"]
+
+[ext_resource type="Script" uid="uid://cf01gpbaixowi" path="res://Scripts/item.gd" id="1_xruxt"]
+[ext_resource type="Texture2D" uid="uid://daa2mberh5vi5" path="res://Elementos/enemies.png" id="2_6f8qp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qapt"]
+atlas = ExtResource("2_6f8qp")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sswf"]
+atlas = ExtResource("2_6f8qp")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jipqn"]
+atlas = ExtResource("2_6f8qp")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lecdw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qapt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sswf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jipqn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2l8v"]
+size = Vector2(89, 53)
+
+[node name="Item" type="Area2D" unique_id=1107770037]
+position = Vector2(0, 1)
+script = ExtResource("1_xruxt")
+
+[node name="Imagemitem" type="AnimatedSprite2D" parent="." unique_id=1716855323]
+texture_filter = 1
+position = Vector2(58, 57.500008)
+scale = Vector2(3.4166665, 3.3958335)
+sprite_frames = SubResource("SpriteFrames_lecdw")
+autoplay = "default"
+
+[node name="Corpoitem" type="CollisionShape2D" parent="." unique_id=2098570539]
+position = Vector2(58.5, 55.5)
+shape = SubResource("RectangleShape2D_o2l8v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

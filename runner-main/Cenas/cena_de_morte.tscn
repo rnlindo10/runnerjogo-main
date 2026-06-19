@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://d0212jrynsnfd"]
+
+[ext_resource type="Script" uid="uid://c286abcgassgd" path="res://Scripts/cena_de_morte.gd" id="1_7v3rq"]
+[ext_resource type="FontFile" uid="uid://kdx854aa8y6a" path="res://Elementos/PressStart2P-Regular.ttf" id="2_ws6oe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qeve1"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r17ly"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="Cena de morte" type="Node2D" unique_id=356161221]
+script = ExtResource("1_7v3rq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2028597854]
+offset_left = -51.0
+offset_top = -49.0
+offset_right = 1176.0
+offset_bottom = 683.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=92850637]
+offset_left = 131.0
+offset_top = 119.0
+offset_right = 948.0
+offset_bottom = 188.0
+theme_override_font_sizes/font_size = 50
+text = "!!!🤣🤣🤣Você morreu 🤣🤣🤣!!!"
+
+[node name="Botoes" type="VBoxContainer" parent="." unique_id=567728077]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 396.0
+offset_top = 310.0
+offset_right = 696.0
+offset_bottom = 484.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 54
+
+[node name="Jogar" type="Button" parent="Botoes" unique_id=2078990819]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ws6oe")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_qeve1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qeve1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qeve1")
+text = "Jogar 
+novamente"
+
+[node name="Sair" type="Button" parent="Botoes" unique_id=1960599175]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ws6oe")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_r17ly")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r17ly")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r17ly")
+text = "Sair"
+
+[connection signal="pressed" from="Botoes/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Botoes/Sair" to="." method="_on_sair_pressed"]

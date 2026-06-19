@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdudh8qtyey1j"
-path="res://.godot/imported/fundojogoazul.jpg-0a44b3387a95566c8511df7dd28c2b9f.ctex"
+uid="uid://drtix87fsxx8y"
+path="res://.godot/imported/background.png-bdf0f32c5bbab73bea3950888f5e3eba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fundojogoazul.jpg"
-dest_files=["res://.godot/imported/fundojogoazul.jpg-0a44b3387a95566c8511df7dd28c2b9f.ctex"]
+source_file="res://Elementos/background.png"
+dest_files=["res://.godot/imported/background.png-bdf0f32c5bbab73bea3950888f5e3eba.ctex"]
 
 [params]
 

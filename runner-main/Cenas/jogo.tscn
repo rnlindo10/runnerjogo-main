@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://dsi3euambmeqq"]
+
+[ext_resource type="Script" uid="uid://2g3spyqwyyxg" path="res://Scripts/jogo.gd" id="1_ovbra"]
+[ext_resource type="Texture2D" uid="uid://drtix87fsxx8y" path="res://Elementos/background.png" id="2_reiul"]
+[ext_resource type="Texture2D" uid="uid://x7yec1jiwhlr" path="res://Elementos/middleground2.png" id="3_p2wm8"]
+[ext_resource type="Texture2D" uid="uid://bsx5e5vmlu85a" path="res://Elementos/foreground.png" id="3_xmmbr"]
+[ext_resource type="Script" uid="uid://dxolwug1p72xq" path="res://Scripts/jogador.gd" id="4_p2wm8"]
+[ext_resource type="Texture2D" uid="uid://b121m4gt0d8uw" path="res://Elementos/middleground1.png" id="4_r4inx"]
+[ext_resource type="Texture2D" uid="uid://dn7q3l8pipleg" path="res://Elementos/player.png" id="5_r4inx"]
+[ext_resource type="Script" uid="uid://dt3eih3d0ulru" path="res://Scripts/gerador_obstaculos.gd" id="8_p2wm8"]
+[ext_resource type="Script" uid="uid://dj8orul72vtye" path="res://Scripts/gerador_itens.gd" id="9_r4inx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhuuu"]
+size = Vector2(1146.5, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y45co"]
+size = Vector2(85, 82.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0rtm"]
+atlas = ExtResource("5_r4inx")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eonkn"]
+atlas = ExtResource("5_r4inx")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x32el"]
+atlas = ExtResource("5_r4inx")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wpd5"]
+atlas = ExtResource("5_r4inx")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epa6h"]
+atlas = ExtResource("5_r4inx")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7megn"]
+atlas = ExtResource("5_r4inx")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmmbr"]
+atlas = ExtResource("5_r4inx")
+region = Rect2(0, 0, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2wm8"]
+atlas = ExtResource("5_r4inx")
+region = Rect2(0, 48, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4inx"]
+atlas = ExtResource("5_r4inx")
+region = Rect2(0, 96, 47, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1dfi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0rtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eonkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x32el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wpd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epa6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7megn")
+}],
+"loop": true,
+"name": &"movimento",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmmbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2wm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4inx")
+}],
+"loop": false,
+"name": &"pular",
+"speed": 5.0
+}]
+
+[node name="Jogo" type="Node2D" unique_id=954651569]
+script = ExtResource("1_ovbra")
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=1734249271]
+texture_filter = 1
+scale = Vector2(3.588889, 3.588889)
+texture = ExtResource("2_reiul")
+centered = false
+
+[node name="Fundo2" type="Sprite2D" parent="." unique_id=841449329]
+texture_filter = 1
+position = Vector2(1148.9999, 1)
+scale = Vector2(3.59375, 3.5777779)
+texture = ExtResource("2_reiul")
+centered = false
+
+[node name="MeioAzul" type="Sprite2D" parent="." unique_id=479305617]
+texture_filter = 1
+position = Vector2(623.5, 288.5)
+scale = Vector2(3.909375, 3.261111)
+texture = ExtResource("3_p2wm8")
+
+[node name="MeioAzul2" type="Sprite2D" parent="." unique_id=1179356308]
+texture_filter = 1
+position = Vector2(1828, 292)
+scale = Vector2(3.8359377, 3.288889)
+texture = ExtResource("3_p2wm8")
+
+[node name="MeioPreto" type="Sprite2D" parent="." unique_id=1928072142]
+texture_filter = 1
+position = Vector2(599.50006, 287)
+scale = Vector2(3.7593753, 3.2000005)
+texture = ExtResource("4_r4inx")
+
+[node name="MeioPreto2" type="Sprite2D" parent="." unique_id=1543703320]
+texture_filter = 1
+position = Vector2(1850, 288)
+scale = Vector2(4.0499997, 3.1944444)
+texture = ExtResource("4_r4inx")
+
+[node name="Chao" type="Sprite2D" parent="." unique_id=1120644506]
+texture_filter = 1
+position = Vector2(-107, 534)
+scale = Vector2(3.9281254, 2.3281248)
+texture = ExtResource("3_xmmbr")
+centered = false
+
+[node name="Chao2" type="Sprite2D" parent="." unique_id=1715477100]
+texture_filter = 1
+position = Vector2(1121.9999, 534.00006)
+scale = Vector2(4.2625003, 2.359374)
+texture = ExtResource("3_xmmbr")
+centered = false
+
+[node name="ChaoFisico" type="StaticBody2D" parent="." unique_id=1010029645]
+
+[node name="CorpoChao" type="CollisionShape2D" parent="ChaoFisico" unique_id=260574215]
+position = Vector2(571.75, 610.5)
+shape = SubResource("RectangleShape2D_yhuuu")
+
+[node name="Jogador" type="CharacterBody2D" parent="." unique_id=2021403520]
+script = ExtResource("4_p2wm8")
+
+[node name="Corpo" type="CollisionShape2D" parent="Jogador" unique_id=2141038851]
+position = Vector2(95.5, 530.375)
+shape = SubResource("RectangleShape2D_y45co")
+
+[node name="Movimento" type="AnimatedSprite2D" parent="Jogador" unique_id=1237809254]
+texture_filter = 1
+position = Vector2(97.00001, 546)
+scale = Vector2(5.317708, 3.9218764)
+sprite_frames = SubResource("SpriteFrames_f1dfi")
+animation = &"movimento"
+autoplay = "movimento"
+
+[node name="GeradorObstaculos" type="Node2D" parent="." unique_id=2080807058]
+script = ExtResource("8_p2wm8")
+
+[node name="GeradorItens" type="Node2D" parent="." unique_id=485713173]
+script = ExtResource("9_r4inx")
+
+[node name="Status" type="HBoxContainer" parent="." unique_id=723722759]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Vida" type="Label" parent="Status" unique_id=1234977654]
+layout_mode = 2
+
+[node name="Pontos" type="Label" parent="Status" unique_id=13171419]
+layout_mode = 2

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dpuc3xlfbtvn0"]
+
+[ext_resource type="Script" uid="uid://c03jessmmgiod" path="res://Scripts/obstaculo.gd" id="1_jo2yb"]
+[ext_resource type="Texture2D" uid="uid://dwjssfycxai3e" path="res://Elementos/thorn.png" id="1_x70jm"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jo2yb"]
+a = Vector2(6, 23)
+b = Vector2(-21, 40)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_am8eb"]
+a = Vector2(-8, 9)
+b = Vector2(18, 25)
+
+[node name="Obstaculo" type="Area2D" unique_id=1417900797]
+position = Vector2(-1, 0)
+script = ExtResource("1_jo2yb")
+
+[node name="Imagemobstaculo" type="Sprite2D" parent="." unique_id=1062474669]
+texture_filter = 1
+position = Vector2(-159.37498, -38.65629)
+scale = Vector2(7.796874, 4.6679635)
+texture = ExtResource("1_x70jm")
+
+[node name="Corpoimagem" type="CollisionShape2D" parent="." unique_id=71410903]
+position = Vector2(-199, -41)
+shape = SubResource("SegmentShape2D_jo2yb")
+
+[node name="Corpoimagem2" type="CollisionShape2D" parent="." unique_id=1635213130]
+position = Vector2(-141, -42)
+shape = SubResource("SegmentShape2D_jo2yb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=34701874]
+position = Vector2(-182, -27)
+shape = SubResource("SegmentShape2D_am8eb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2010815935]
+position = Vector2(-125, -28)
+shape = SubResource("SegmentShape2D_am8eb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
